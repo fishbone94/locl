@@ -1,22 +1,137 @@
 <html>
 
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
 <body>
+  
+ </body>
 
-<div id="googleMap" style="width:400px;height:400px;"></div>
+   <div id="map"></div>
 
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-};
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
+      <script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOjAaoOY0NyntNXH-NilOxT8Qzthmi02U&callback=myMap"></script>
+      function initMap() {
+        var myLatLng = {lat: 35.682020, lng: 139.7635251};
 
-</body>
+        var myLatLng1 = {lat: 35.682062, lng: 139.771101};
+        var myLatLng2 = {lat: 35.672931, lng: 139.768693};
+        var myLatLng3 = {lat: 35.673630, lng: 139.778761};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng2
+        });
+
+        var contentString = '<div id="content">'+
+            '<p><b>YOU ARE HERE</b></p>' +
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'YOU ARE HERE'
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+
+        // Marker 1
+        var contentString1 = '<div id="content">'+
+            '<p><b>Kite Museum (Tako-no-Hakubutsukan) 凧の博物館/b></p>' +
+            '</div>';
+
+        var infowindow1 = new google.maps.InfoWindow({
+          content: contentString1
+        });
+
+
+        var marker1 = new google.maps.Marker({
+          position: myLatLng1,
+          map: map,
+          title: 'Kite Museum (Tako-no-Hakubutsukan)'
+        });
+
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+
+
+        // Marker 2
+        var contentString2 = '<div id="content">'+
+            '<p><b>Mitsuo Aida Museum 相田みつを美術館</b></p>' +
+            '</div>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+
+      var marker2 = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'Mitsuo Aida Museum'
+        });
+
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+
+
+        // Marker 3
+
+        var contentString3 = '<div id="content">'+
+            '<p><b>Samurai Museum サムライミュージアム</b></p>' +
+            '</div>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+          content: contentString3
+        });
+
+
+       var marker3 = new google.maps.Marker({
+          position: myLatLng3,
+          map: map,
+          title: 'Samurai Museum'
+        });
+
+
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+
+
+
+      }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOjAaoOY0NyntNXH-NilOxT8Qzthmi02U&callback=initMap">
+    </script>
+
 
 <!-- Start of locl Zendesk Widget script -->
 <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","locl.zendesk.com");

@@ -47,16 +47,13 @@
           content: contentString
         });
 
+	var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
         var marker = new google.maps.Marker({
-          icon: new google.maps.MarkerImage('http://maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                new google.maps.Size(22,22),
-                new google.maps.Point(0,18),
-                new google.maps.Point(11,11)),
-		  shadow: null,
-		  position: myLatLng,
+          icon: iconBase + 'man.png',
+	  position: myLatLng,
           map: map,
-		  animation: google.maps.Animation.DROP,
+	  animation: google.maps.Animation.DROP,
           title: 'YOU ARE HERE'
         });
 

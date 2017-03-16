@@ -64,7 +64,7 @@
 
         // Marker 1
         var contentString1 = '<div id="content">'+
-            '<p><b>Kite Museum (Tako-no-Hakubutsukan) 凧の博物館/b></p>' +
+            '<p><b>Kite Museum (Tako-no-Hakubutsukan) 凧の博物館</b></p>' +
             '</div>';
 
         var infowindow1 = new google.maps.InfoWindow({
@@ -73,6 +73,7 @@
 
 
         var marker1 = new google.maps.Marker({
+	  icon: iconBase + 'flag.png',
           position: myLatLng1,
           map: map,
           title: 'Kite Museum (Tako-no-Hakubutsukan)'
@@ -94,6 +95,7 @@
 
 
       var marker2 = new google.maps.Marker({
+	  icon: iconBase + 'flag.png',
           position: myLatLng2,
           map: map,
           title: 'Mitsuo Aida Museum'
@@ -116,6 +118,7 @@
 
 
        var marker3 = new google.maps.Marker({
+	  icon: iconBase + 'flag.png',
           position: myLatLng3,
           map: map,
           title: 'Samurai Museum'
